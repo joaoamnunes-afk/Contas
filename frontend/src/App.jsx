@@ -269,6 +269,10 @@ function App() {
             (total, conta) => total + Number(conta.valor_conta),
             0
         );
+        const totalPagoQuantidade = contas.filter(
+    conta => conta.status === 'PAGO'
+).length;
+
 
     return (
         <main className="container">
@@ -282,6 +286,8 @@ function App() {
                 <div className="total-cabecalho">
                     <span>Contas cadastradas</span>
                     <strong>{contas.length}</strong>
+                   <span>Contas Pagas Graças a Deus</span>
+                   <strong>{totalPagoQuantidade}</strong>
                 </div>
             </header>
 
